@@ -22,7 +22,7 @@ function HomePage() {
         setRole("")
     }
 
-    async function deleteUser(id){
+    async function deleteUser(id) {
         await fetch("https://backend-production-9ecd6.up.railway.app/users/" + id, {
             method: "DELETE"
         })
@@ -34,15 +34,15 @@ function HomePage() {
         <div>
             <h1>User List</h1>
 
-            <input 
-                type="text" 
+            <input
+                type="text"
                 placeholder="Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
             />
 
-            <input 
-                type="text" 
+            <input
+                type="text"
                 placeholder="Role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
