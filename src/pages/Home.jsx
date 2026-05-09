@@ -23,7 +23,7 @@ function HomePage() {
     }
 
     async function deleteUser(id){
-        await fetch("https://backend-production-9ecd6.up.railway.app/users" + id, {
+        await fetch("https://backend-production-9ecd6.up.railway.app/users/" + id, {
             method: "DELETE"
         })
         setUsers(users.filter(user => user.id !== id))
