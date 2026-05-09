@@ -5,13 +5,13 @@ function HomePage() {
     const [name, setName] = useState("")
     const [role, setRole] = useState("")
     useEffect(() => {
-        fetch("http://localhost:3000/users")
+        fetch("https://backend-production-9ecd6.up.railway.app/users")
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])
 
     async function addUser() {
-        const response = await fetch("http://localhost:3000/users", {
+        const response = await fetch("https://backend-production-9ecd6.up.railway.app/users", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, role })
@@ -23,7 +23,7 @@ function HomePage() {
     }
 
     async function deleteUser(id){
-        await fetch("http://localhost:3000/users" + id, {
+        await fetch("https://backend-production-9ecd6.up.railway.app/users" + id, {
             method: "DELETE"
         })
         setUsers(users.filter(user => user.id !== id))
